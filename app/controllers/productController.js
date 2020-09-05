@@ -1,6 +1,7 @@
 const pool = require("./../../databasePool");
 
 exports.getProducts = (request, response) => {
+  // console.log(req.user);
   pool.query("SELECT * FROM PRODUCT", (error, results) => {
     if (error) {
       throw error;
