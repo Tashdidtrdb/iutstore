@@ -12,7 +12,7 @@ app.use("/account", accountRouter);
 app.use("/product", productRouter);
 app.use("/cart", cartRouter);
 
-app.all("*", (err, req, res, next) => {
+app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
 
   res.status(statusCode).json({

@@ -1,5 +1,5 @@
 const express = require("express");
-
+const authenticate = require("./authentication.js");
 const productController = require("./../controllers/productController");
 
 const router = express.Router();
@@ -7,12 +7,12 @@ const router = express.Router();
 router
   .route("/")
   .get(productController.getProducts)
-  .post(productController.createProduct);
+  .post(authenticate, productController.createProduct);
 
 router
   .route("/:id")
   .get(productController.getProductById)
-  .patch(productController.updateProductById)
-  .delete(productController.deleteProductById);
+  .patch(authenticate, productController.updateProductById)
+  .delete(authenticate, productController.deleteProductById);
 
 module.exports = router;

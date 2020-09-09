@@ -1,8 +1,6 @@
 CREATE TABLE account(
     id SERIAL PRIMARY KEY,
     name VARCHAR(64),
-    address VARCHAR(128),
-    hall VARCHAR(10),
     "emailHash" VARCHAR(64),
     "passwordHash" VARCHAR(64),
     "sessionId" VARCHAR(36)

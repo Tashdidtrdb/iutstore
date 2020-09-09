@@ -8,14 +8,14 @@ const { validationRules, validate } = require('../account/validator');
 const router = new Router();
 
 router.post('/signup', validationRules(), validate, (req, res, next) => {
-    const { email, password, name, address, hall } = req.body;
+    const { email, password, name } = req.body;
     const emailHash = hash(email);
     const passwordHash = hash(password);
 
     AccountTable.getAccount({ emailHash })
         .then(({ account }) => {
             if(!account) {
-                return AccountTable.storeAccount({ emailHash, passwordHash, name, address, hall })
+                return AccountTable.storeAccount({ emailHash, passwordHash, name })
             } else {
                 const error = new Error('This email is already registered');
                 error.statusCode = 409;
