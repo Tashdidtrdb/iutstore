@@ -91,15 +91,14 @@ body{
     border-radius: 15px;
     background-color: #eaa81b;
     height:50px;
-    font-family: ;
     font-size: 19px;
     border-color: #1a2c5b;
     font-weight: bold;
     box-shadow: 10px;
 }
-#sub:hover{
-    /* color: deepskyblue; */
-}
+/* #sub:hover{
+     color: deepskyblue; 
+} */
 .login{
     width: 100%;
     padding: 50px 0px;
@@ -127,3 +126,13 @@ body{
     font-size: 50px;
     
 }
+
+#button:focus{
+  outline: none;
+}
+#sub:focus{
+  outline: none;
+}
+
+
+

@@ -35,11 +35,8 @@ nav.navbar.navbar-default.navbar-fixed-top
                 li
                     a(href='#') Cart
 .simple
-    form#reg(action='dog.reg.php' method='POST')
-        input#button(type='text' name='fname' placeholder='Your first name')
-        br
-        br
-        input#button(type='text' name='lname' placeholder='Your last name')
+    form#reg(action='' method='')
+        input#button(type='text' name='name' placeholder='Your name')
         br
         br
         input#button(type='email' name='email' placeholder='Your email')
@@ -48,7 +45,7 @@ nav.navbar.navbar-default.navbar-fixed-top
         input#button(type='password' name='pass' placeholder='Your password')
         br
         br
-        input#sub(type='submit' name='submit' value='Register' href='dog2.htm')
+        input#sub(type='submit' name='submit' value='Register' href='#')
         p.message
             | Already Registered?
             a.message2(href='#')  Log In
@@ -59,7 +56,7 @@ nav.navbar.navbar-default.navbar-fixed-top
         input#button(type='password' name='pass' placeholder='Your password')
         br
         br
-        input#sub(type='submit' value='Log In' href='dog2.htm')
+        input#sub(type='submit' value='Log In' href='')
         p.message
             | Not Registered?
             a.message2(href='#')  Register
