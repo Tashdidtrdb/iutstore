@@ -1,0 +1,92 @@
+<html>
+
+<head>
+
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="loginsignupstyle.css">
+  <title>ACCOUNT PAGE</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><span class="headleft">IUT </span><span class="headright">STORE</span>
+        </a>
+
+      </div>
+
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              Categories
+              <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">T-Shirts</a></li>
+              <li><a href="#">Jacket</a></li>
+              <li><a href="#">Hoodies</a></li>
+              <li><a href="#">Others</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Account</a></li>
+          <li><a href="#">Cart</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <div class="simple">
+    <form id="reg" action="dog.reg.php" method="POST">
+      <input type="text" name="fname" id="button" placeholder="Your first name"><br>
+      <br>
+      <input type="text" name="lname" id="button" placeholder="Your last name"><br><br>
+
+
+      <input type="email" name="email" id="button" placeholder="Your email"><br>
+      <br>
+
+      <input type="password" name="pass" id="button" placeholder="Your password"><br>
+      <br>
+      <input type="submit" name="submit" id="sub" value="Register" href="dog2.htm">
+      <p class="message"> Already Registered?<a href="#" class="message2"> Log In</a> </p>
+    </form>
+    <form class="login">
+      <input type="email" name="email" id="button" placeholder="Your email"><br>
+      <br>
+
+      <input type="password" name="pass" id="button" placeholder="Your password"><br>
+      <br>
+      <input type="submit" id="sub" value="Log In" href="dog2.htm">
+      <p class="message"> Not Registered?<a href="#" class="message2"> Register</a> </p>
+
+
+    </form>
+
+
+  </div>
+  <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+
+
+  <script>
+    $('.message a').click(function () {
+      $('form').animate({
+        height: "toggle",
+        opacity: "toggle"
+      }, "slow");
+    });
+  </script>
+  <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+
+</html>

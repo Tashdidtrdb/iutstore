@@ -1,0 +1,67 @@
+head
+  link(rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+  link(rel='stylesheet' href='cartstyle.css')
+  title Cart
+nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed(type='button' data-toggle='collapse' data-target='#navbar' aria-expanded='false' aria-controls='navbar')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(href='#')
+        span.headleft IUT 
+        span.headright STORE
+    #navbar.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='#') Home
+        li.dropdown
+          a.dropdown-toggle(data-toggle='dropdown' href='#')
+            | Categories
+            span.caret
+          ul.dropdown-menu
+            li
+              a(href='#') T-Shirts
+            li
+              a(href='#') Jacket
+            li
+              a(href='#') Hoodies
+            li
+              a(href='#') Others
+        li
+          a(href='#') Account
+        li
+          a(href='#') Cart
+.space
+.table-responsive.container
+  table.table
+    thead.thead
+      tr
+        th(scope='col') #
+        th(scope='col') Cart_ID
+        th(scope='col') User_ID
+        th(scope='col') Product_ID
+        th(scope='col') Product Name
+        th(scope='col') User Name
+        th(scope='col') Price
+    tbody
+      tr
+        th(scope='row') 1
+        td 11
+        td 101
+        td 111
+        td Iutian T-Shirt
+        td XX
+        td 200tk
+      tr
+        th(scope='row') 2
+        td 11
+        td 101
+        td 111
+        td Iutian T-Shirt
+        td XX
+        td 200tk
+script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+script(type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
