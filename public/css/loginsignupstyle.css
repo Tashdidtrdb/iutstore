@@ -8,30 +8,30 @@ body{
 .headleft{
   color:orange ;
   font-weight: bold;
-  
+
 }
 .headright{
-  
+
   font-weight: bold;
 }
 .dropbtn {
-    
+
     padding: 16px;
     font-size: 14px;
     border: none;
     cursor: pointer;
-    
+
   }
-  
+
   .dropbtn:hover, .dropbtn:focus {
     background-color:white;
   }
-  
+
   .dropdown {
     position: relative;
     display: inline-block;
   }
-  
+
   .dropdown-content {
     display: none;
     position: absolute;
@@ -41,23 +41,23 @@ body{
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
-  
+
   .dropdown-content a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
   }
-  
+
   /* .dropdown a:hover {background-color: #ddd;} */
-  
+
 
 .simple{
     text-align: center;
     margin-top:40px;
     margin-left: 150px ;
     margin-right:250px;
-    
+
 }
 
 #reg{
@@ -66,22 +66,40 @@ body{
     /* background-color: #d7f8f7; */
     opacity: 0.8;
 }
+#email{
+  width: 250px;
+  padding: 10px;
+
+  border-radius: 10px;
+}
+#password{
+  width: 250px;
+  padding: 10px;
+
+  border-radius: 10px;
+}
+#confirmpassword{
+  width: 250px;
+  padding: 10px;
+
+  border-radius: 10px;
+}
 
 #button{
     width: 250px;
     padding: 10px;
-    
+
     border-radius: 10px;
-     
+
 }
 /* #button:hover{
-     border-color: cornflowerblue; 
-    
+     border-color: cornflowerblue;
+
 } */
 #ph{
     width: 70px;
     padding: 10px;
-    
+
     border-radius: 10px;
     font-family: fantasy;
 }
@@ -97,7 +115,7 @@ body{
     box-shadow: 10px;
 }
 /* #sub:hover{
-     color: deepskyblue; 
+     color: deepskyblue;
 } */
 .login{
     width: 100%;
@@ -108,9 +126,9 @@ body{
     display: none;
 }
 .message{
-    
+
     font-size: 15px;
-   
+
 }
 .message2{
     font-size: 15px;
@@ -124,7 +142,7 @@ body{
     color: black;
     font-weight: bolder;
     font-size: 50px;
-    
+
 }
 
 #button:focus{
@@ -133,6 +151,3 @@ body{
 #sub:focus{
   outline: none;
 }
-
-
-

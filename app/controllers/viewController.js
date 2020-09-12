@@ -17,3 +17,7 @@ exports.getTshirt = (req, res) => {
 exports.getOther = (req, res) => {
   res.status(200).render("others");
 };
+
+exports.getLogin = (req, res) => {
+  res.status(200).render("login_signup");
+};

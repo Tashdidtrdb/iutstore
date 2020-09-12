@@ -8,6 +8,7 @@ router
   .get("/hoodies", viewController.getHoodies)
   .get("/jackets", viewController.getJacket)
   .get("/tshirts", viewController.getTshirt)
-  .get("/others", viewController.getOther);
+  .get("/others", viewController.getOther)
+  .get("/login_signup", viewController.getLogin);
 
 module.exports = router;
