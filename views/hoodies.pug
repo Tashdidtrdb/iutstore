@@ -2,7 +2,7 @@ head
     title IUT STORE
     link(href='/fontawesome-free-5.14.0-web/css/all.css' rel='stylesheet')
     link(rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
-    link(rel='stylesheet' href='productstyle.css')
+    link(rel='stylesheet' href='/css/productstyle.css')
 nav.navbar.navbar-default.navbar-fixed-top
     .container
         .navbar-header
@@ -11,37 +11,37 @@ nav.navbar.navbar-default.navbar-fixed-top
                 span.icon-bar
                 span.icon-bar
                 span.icon-bar
-            a.navbar-brand(href='#')
+            a.navbar-brand(href='/')
                 span.headleft IUT 
                 span.headright STORE
         #navbar.collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-right
                 li
-                    a(href='#') Home
+                    a(href='/') Home
                 li.dropdown
                     a.dropdown-toggle(data-toggle='dropdown' href='#')
                         | Categories
                         span.caret
                     ul.dropdown-menu
-                        li
-                            a(href='#') T-Shirts
-                        li
-                            a(href='#') Jacket
-                        li
-                            a(href='#') Hoodies
-                        li
-                            a(href='#') Others
+                      li
+                          a(href='/tshirts') T-Shirts
+                      li
+                          a(href='/jackets') Jacket
+                      li
+                          a(href='hoodies') Hoodies
+                      li
+                          a(href='/others') Others
                 li
                     a(href='#') Account
                 li
                     a(href='#') Cart
 section.products
     .section-title
-        h2 Jackets
+        h2 Hoodies
     .products-center
         article.product
             .img-container
-                img.product-img(src='jackets/iut jacket ash.PNG' alt='products')
+                img.product-img(src='/img/hoodies_img/hoodie 3.PNG' alt='products')
                 button.bag-btn(data-id='1')
                     i.fas.fa-shopping-cart
                     |             Add to cart
@@ -49,7 +49,7 @@ section.products
             h4 200 tk
         article.product
             .img-container
-                img.product-img(src='jackets/iut jacket.PNG' alt='products')
+                img.product-img(src='/img/hoodies_img/hoodie 4.PNG' alt='products')
                 button.bag-btn(data-id='1')
                     i.fas.fa-shopping-cart
                     |             Add to cart
@@ -57,7 +57,7 @@ section.products
             h4 200 tk
         article.product
             .img-container
-                img.product-img(src='jackets/Iutian (black).PNG' alt='products')
+                img.product-img(src='/img/hoodies_img/hoodie2.PNG' alt='products')
                 button.bag-btn(data-id='1')
                     i.fas.fa-shopping-cart
                     |             Add to cart
@@ -65,7 +65,7 @@ section.products
             h4 200 tk
         article.product
             .img-container
-                img.product-img(src='jackets/jacket_iutian_navyblue.PNG' alt='products')
+                img.product-img(src='/img/hoodies_img/Iutian (Ash).PNG' alt='products')
                 button.bag-btn(data-id='1')
                     i.fas.fa-shopping-cart
                     |             Add to cart

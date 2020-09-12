@@ -1,6 +1,6 @@
 head
     link(rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
-    link(rel='stylesheet' type='text/css' href='homepagestyle.css')
+    link(rel='stylesheet' type='text/css' href='/css/homepagestyle.css')
 nav.navbar.navbar-default.navbar-fixed-top
     .container-fluid
         .navbar-header
@@ -9,50 +9,55 @@ nav.navbar.navbar-default.navbar-fixed-top
                 span.icon-bar
                 span.icon-bar
                 span.icon-bar
-            a.navbar-brand(href='#')
+            a.navbar-brand(href='/')
                 span.headleft IUT 
                 span.headright STORE
         #navbar.collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-right
                 li
-                    a(href='#') Home
+                    a(href='/') Home
                 li.dropdown
                     a.dropdown-toggle(data-toggle='dropdown' href='#')
                         | Categories
                         span.caret
                     ul.dropdown-menu
                         li
-                            a(href='#') T-Shirts
+                            a(href='/tshirts') T-Shirts
                         li
-                            a(href='#') Jacket
+                            a(href='/jackets') Jacket
                         li
-                            a(href='#') Hoodies
+                            a(href='hoodies') Hoodies
                         li
-                            a(href='#') Others
+                            a(href='/others') Others
                 li
                     a(href='#') Account
                 li
                     a(href='#') Cart
+
 .container
     .card
         .imgBx
-            img(src='hoodie.PNG')
+            img(src='/img/homepage_img/hoodie.PNG')
         .content
+          a(href='/hoodies')
             h3 HOODIES
     .card
         .imgBx
-            img(src='iutian_red.PNG')
+            img(src='/img/homepage_img/iutian_red.PNG')
         .content
+          a(href='/tshirts')
             h3 T-SHIRTS
     .card
         .imgBx
-            img(src='jacket_iutian_navyblue.png')
+            img(src='/img/homepage_img/jacket_iutian_navyblue.png')
         .content
+          a(href='/jackets')
             h3 JACKETS
     .card
         .imgBx
-            img(src='ss black.PNG')
+            img(src='/img/homepage_img/ss black.PNG')
         .content
+          a(href='/others')
             h3 OTHERS
 script(src='https://code.jquery.com/jquery-3.3.1.min.js')
 script(type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
