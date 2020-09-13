@@ -1,6 +1,7 @@
 head
     link(rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
-    link(rel='stylesheet' type='text/css' href='/css/homepagestyle.css')
+    link(rel='stylesheet' href='/css/loginsignupstyle.css')
+    title LOGIN PAGE
 nav.navbar.navbar-default.navbar-fixed-top
     .container
         .navbar-header
@@ -21,47 +22,33 @@ nav.navbar.navbar-default.navbar-fixed-top
                         | Categories
                         span.caret
                     ul.dropdown-menu
-                        li
-                            a(href='/tshirts') T-Shirts
-                        li
-                            a(href='/jackets') Jacket
-                        li
-                            a(href='/hoodies') Hoodies
-                        li
-                            a(href='/others') Others
+                      li
+                          a(href='/tshirts') T-Shirts
+                      li
+                          a(href='/jackets') Jacket
+                      li
+                          a(href='hoodies') Hoodies
+                      li
+                          a(href='/others') Others
                 li
-                    a(href='/account') Account
+                    a(href='#') Account
                 li
                     a(href='/cart') Cart
 
-.card_container
-    .card
-        .imgBx
-            img(src='/img/homepage_img/hoodie.PNG')
-        .content
-          a(href='/hoodies')
-            h3 HOODIES
+.simple
+    form.login
+        input.input_field(type='email' name='email' placeholder='Your email')
+        br
+        br
+        input.input_field(type='password' name='pass' placeholder='Your password')
+        br
+        br
+        button#sub(type='submit') Log In
+        p.message
+            | Not Registered?
+            a.message2(href='/signup')  Register
 
-    .card
-        .imgBx
-            img(src='/img/homepage_img/iutian_red.PNG')
-        .content
-          a(href='/tshirts')
-            h3 T-SHIRTS
-
-    .card
-        .imgBx
-            img(src='/img/homepage_img/jacket_iutian_navyblue.png')
-        .content
-          a(href='/jackets')
-            h3 JACKETS
-
-    .card
-        .imgBx
-            img(src='/img/homepage_img/ss black.PNG')
-        .content
-          a(href='/others')
-            h3 OTHERS
-                
+script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js")
 script(src='https://code.jquery.com/jquery-3.3.1.min.js')
 script(type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
+script(src='/js/login.js')

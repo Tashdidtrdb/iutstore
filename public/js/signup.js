@@ -1,17 +1,19 @@
-const login = async (email, password) => {
-    try{
+const signup = async (name, email, password) => {
+    try {
         const res = await axios({
             method: 'POST',
-            url: 'http://localhost:3000/account/login',
+            url: 'http://localhost:3000/account/signup',
             data: {
+              name,
               email,
               password
             }
         });
         console.log(res);
-        location.assign("/");
+        location.assign("/login");
     } catch(err) {
-        alert(JSON.stringify(err.response.data.message));
+        const error = err.response.data.message[0];
+        alert(JSON.stringify(error));
         console.log(err.response.data);
     }
 };
@@ -32,7 +34,8 @@ isLoggedIn();
 
 document.querySelector("#sub").addEventListener("click", e => {
   e.preventDefault();
+  const name = document.getElementsByName("name")[0].value;
   const email = document.getElementsByName("email")[0].value;
   const password = document.getElementsByName("pass")[0].value;
-  login(email, password);
+  signup(name, email, password);
 });

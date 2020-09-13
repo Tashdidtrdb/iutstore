@@ -1,7 +1,7 @@
 head
     link(rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
     link(rel='stylesheet' href='/css/loginsignupstyle.css')
-    title ACCOUNT PAGE
+    title SIGNUP PAGE
 nav.navbar.navbar-default.navbar-fixed-top
     .container
         .navbar-header
@@ -34,38 +34,25 @@ nav.navbar.navbar-default.navbar-fixed-top
                     a(href='#') Account
                 li
                     a(href='/cart') Cart
-.simple
-    form#reg(action='' method='')
-        input#button(type='text' name='name' placeholder='Your name')
+
+
+.simple        
+    form.reg(action='' method='')
+        input.input_field(type='text' name='name' placeholder='Your name')
         br
         br
-        input#button(type='email' name='email' placeholder='Your email')
+        input.input_field(type='email' name='email' placeholder='Your email')
         br
         br
-        input#button(type='password' name='pass' placeholder='Your password')
+        input.input_field(type='password' name='pass' placeholder='Your password')
         br
         br
-        input#sub(type='submit' name='submit' value='Register' href='#')
+        button#sub(type='submit') Register
         p.message
             | Already Registered?
-            a.message2(href='#')  Log In
-    form.login
-        input#button(type='email' name='email' placeholder='Your email')
-        br
-        br
-        input#button(type='password' name='pass' placeholder='Your password')
-        br
-        br
-        input#sub(type='submit' value='Log In' href='')
-        p.message
-            | Not Registered?
-            a.message2(href='#')  Register
+            a.message2(href='/login')  Log In
+
+script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js")
 script(src='https://code.jquery.com/jquery-3.3.1.min.js')
-script.
-    $('.message a').click(function () {
-    $('form').animate({
-    height: "toggle",
-    opacity: "toggle"
-    }, "slow");
-    });
 script(type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
+script(type='text/javascript' src='/js/signup.js')

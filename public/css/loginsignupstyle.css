@@ -11,95 +11,83 @@ body{
 
 }
 .headright{
-
   font-weight: bold;
 }
 .dropbtn {
+  padding: 16px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+}
 
-    padding: 16px;
-    font-size: 14px;
-    border: none;
-    cursor: pointer;
+.dropbtn:hover, .dropbtn:focus {
+  background-color:white;
+}
 
-  }
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
 
-  .dropbtn:hover, .dropbtn:focus {
-    background-color:white;
-  }
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
 
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
 
   /* .dropdown a:hover {background-color: #ddd;} */
 
 
 .simple{
-    text-align: center;
-    margin-top:40px;
-    margin-left: 150px ;
-    margin-right:250px;
-
+  text-align: center;
+  margin-top:40px;
+  margin-left: 150px ;
+  margin-right:250px;
 }
 
-#reg{
-    width: 100%;
-    padding: 50px 0px;
-    /* background-color: #d7f8f7; */
-    opacity: 0.8;
+.reg{
+  width: 100%;
+  padding: 50px 0px;
+  /* background-color: #d7f8f7; */
+  opacity: 0.8;
 }
 #email{
   width: 250px;
   padding: 10px;
-
   border-radius: 10px;
 }
 #password{
   width: 250px;
   padding: 10px;
-
   border-radius: 10px;
 }
 #confirmpassword{
   width: 250px;
   padding: 10px;
-
   border-radius: 10px;
 }
 
-#button{
+.input_field{
     width: 250px;
     padding: 10px;
-
     border-radius: 10px;
 
 }
-/* #button:hover{
-     border-color: cornflowerblue;
 
-} */
 #ph{
     width: 70px;
     padding: 10px;
-
     border-radius: 10px;
     font-family: fantasy;
 }
@@ -114,21 +102,15 @@ body{
     font-weight: bold;
     box-shadow: 10px;
 }
-/* #sub:hover{
-     color: deepskyblue;
-} */
+
 .login{
     width: 100%;
     padding: 50px 0px;
     opacity: 0.8;
 }
-#reg{
-    display: none;
-}
+
 .message{
-
     font-size: 15px;
-
 }
 .message2{
     font-size: 15px;
@@ -145,7 +127,7 @@ body{
 
 }
 
-#button:focus{
+.input_field:focus{
   outline: none;
 }
 #sub:focus{

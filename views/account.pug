@@ -1,6 +1,6 @@
 head
     link(rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
-    link(rel='stylesheet' type='text/css' href='/css/homepagestyle.css')
+    link(rel='stylesheet' href='acountstyle.css')
 nav.navbar.navbar-default.navbar-fixed-top
     .container
         .navbar-header
@@ -30,38 +30,15 @@ nav.navbar.navbar-default.navbar-fixed-top
                         li
                             a(href='/others') Others
                 li
-                    a(href='/account') Account
+                    a(href='#') Account
                 li
                     a(href='/cart') Cart
-
-.card_container
-    .card
-        .imgBx
-            img(src='/img/homepage_img/hoodie.PNG')
-        .content
-          a(href='/hoodies')
-            h3 HOODIES
-
-    .card
-        .imgBx
-            img(src='/img/homepage_img/iutian_red.PNG')
-        .content
-          a(href='/tshirts')
-            h3 T-SHIRTS
-
-    .card
-        .imgBx
-            img(src='/img/homepage_img/jacket_iutian_navyblue.png')
-        .content
-          a(href='/jackets')
-            h3 JACKETS
-
-    .card
-        .imgBx
-            img(src='/img/homepage_img/ss black.PNG')
-        .content
-          a(href='/others')
-            h3 OTHERS
-                
+div
+    img.picture(src='/img/account_img/profile.jpg')
+.profileinfo
+    p Name: 
+    p Email: 
+    p Password: 
+    button Change Picture
 script(src='https://code.jquery.com/jquery-3.3.1.min.js')
 script(type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')

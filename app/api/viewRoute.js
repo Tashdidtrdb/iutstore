@@ -1,5 +1,6 @@
 const express = require("express");
 const viewController = require("../controllers/viewController");
+const authenticate = require("./authentication.js");
 
 const router = express.Router();
 
@@ -9,6 +10,8 @@ router
   .get("/jackets", viewController.getJacket)
   .get("/tshirts", viewController.getTshirt)
   .get("/others", viewController.getOther)
-  .get("/login_signup", viewController.getLogin);
+  .get("/account", authenticate, viewController.getAccount)
+  .get("/signup", viewController.getSignup)
+  .get("/login", viewController.getLogin)
 
 module.exports = router;
