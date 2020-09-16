@@ -6,21 +6,21 @@ exports.getHomepage = (req, res) => {
   res.status(200).render("base");
 };
 
-exports.getHoodies = (req, res) => {
-  res.status(200).render("hoodies");
-};
+// exports.getHoodies = (req, res) => {
+//   res.status(200).render("hoodies");
+// };
 
-exports.getJacket = (req, res) => {
-  res.status(200).render("jackets");
-};
+// exports.getJacket = (req, res) => {
+//   res.status(200).render("jackets");
+// };
 
-exports.getTshirt = (req, res) => {
-  res.status(200).render("products");
-};
+// exports.getTshirt = (req, res) => {
+//   res.status(200).render("products");
+// };
 
-exports.getOther = (req, res) => {
-  res.status(200).render("others");
-};
+// exports.getOther = (req, res) => {
+//   res.status(200).render("others");
+// };
 
 exports.getSignup = (req, res) => {
   const { sessionString } = req.cookies;
@@ -74,5 +74,17 @@ exports.getAccount = (req, res) => {
 }
 
 exports.add_product = (req, res) => {
-  res.status(200).render("addproduct");
+  const { sessionString } = req.cookies;
+
+  if(!sessionString || !Session.isValid(sessionString)) {
+    res.status(200).redirect("/login");
+  } else {
+    const { email, id } = Session.parse(sessionString);
+
+    AccountTable.getAccount({ email, emailHash: hash(email) })
+      .then(({ account }) => {
+        res.status(200).render("addproduct");
+      })
+      .catch(error => res.status(200).redirect("/login"));
+  }
 }

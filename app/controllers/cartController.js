@@ -11,15 +11,16 @@ exports.add_to_cart = async (req, res) => {
   if(!sessionString || !Session.isValid(sessionString)) {
       const error = new Error('Invalid session');
       error.statusCode = 400;
-
-      res.redirect('/login');
+      res.status(200).send("login");
+      // res.redirect('/login');
   } else {  
     const { email, id } = Session.parse(sessionString);
 
     AccountTable.getAccount({ email, emailHash: hash(email) })
     .then(({ account }) => {
       if(!account) {
-        res.redirect('/login');
+        res.status(200).send("login");
+        // res.redirect('/login');
       }  
       pool.query("INSERT INTO CART (user_id, owner_id, product_id, p_title, price) VALUES ($1, $2, $3, $4, $5)",
       [account.id, owner_id, p_id, p_title, price],

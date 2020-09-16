@@ -1,3 +1,9 @@
+const show_error = (message) => {
+  const display = document.getElementsByClassName("message_error")[0];
+  display.style.display = "block";
+  display.innerText = message;
+}
+
 const login = async (email, password) => {
   try{
     const res = await axios({
@@ -8,11 +14,10 @@ const login = async (email, password) => {
         password
       }
     });
-    console.log(res);
     location.assign("/");
   } catch(err) {
-    alert(JSON.stringify(err.response.data.message));
-    console.log(err.response.data);
+    const message = JSON.stringify(err.response.data.message);
+    show_error("Incorrect email/password");
   }
 };
 
@@ -20,5 +25,9 @@ document.querySelector("#sub").addEventListener("click", e => {
   e.preventDefault();
   const email = document.getElementsByName("email")[0].value;
   const password = document.getElementsByName("pass")[0].value;
-  login(email, password);
+  if(!email || !password) {
+    show_error("All fields need to be filled");
+  } else {
+    login(email, password);
+  }
 });

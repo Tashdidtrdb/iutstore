@@ -1,7 +1,7 @@
 head
   link(rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
   link(rel='stylesheet' href='/css/addproductstyle.css')
-  title PRODUCT-FORM
+  title PRODUCT FORM
 nav.navbar.navbar-default.navbar-fixed-top
   .container
     .navbar-header
@@ -35,6 +35,8 @@ nav.navbar.navbar-default.navbar-fixed-top
         li
           a(href='/cart') Cart
 .simple
+  br
+  .message_display(class='alert alert-danger' role='alert')
   form.productform(enctype='multipart/form-data')
     input#input_field(type='text' name='p_title' placeholder='Product Name')
     br

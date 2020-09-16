@@ -1,7 +1,7 @@
 head
     link(rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
     link(rel='stylesheet' href='/css/loginsignupstyle.css')
-    title LOGIN PAGE
+    title LOGIN
 nav.navbar.navbar-default.navbar-fixed-top
     .container
         .navbar-header
@@ -23,19 +23,21 @@ nav.navbar.navbar-default.navbar-fixed-top
                         span.caret
                     ul.dropdown-menu
                       li
-                          a(href='/tshirts') T-Shirts
+                          a(href='/product/?category=tshirt') T-Shirts
                       li
-                          a(href='/jackets') Jacket
+                          a(href='/product/?category=jacket') Jackets
                       li
-                          a(href='hoodies') Hoodies
+                          a(href='/product/?category=hoodie') Hoodies
                       li
-                          a(href='/others') Others
+                          a(href='/product/?category=others') Others
                 li
-                    a(href='#') Account
+                    a(href='/account') Account
                 li
                     a(href='/cart') Cart
 
 .simple
+    br
+    .message_error(class='alert alert-danger' role='alert')
     form.login
         input.input_field(type='email' name='email' placeholder='Your email')
         br

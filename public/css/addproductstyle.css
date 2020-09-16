@@ -109,3 +109,7 @@ body{
 #fileinput{
   visibility: hidden;
 }
+
+.message_display{
+  display: none;
+}

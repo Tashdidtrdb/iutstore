@@ -1,7 +1,7 @@
 head
     link(rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
     link(rel='stylesheet' href='/css/loginsignupstyle.css')
-    title SIGNUP PAGE
+    title REGISTER
 nav.navbar.navbar-default.navbar-fixed-top
     .container
         .navbar-header
@@ -36,7 +36,9 @@ nav.navbar.navbar-default.navbar-fixed-top
                     a(href='/cart') Cart
 
 
-.simple        
+.simple
+    br
+    .message_error(class='alert alert-danger' role='alert')
     form.reg(action='' method='')
         input.input_field(type='text' name='name' placeholder='Your name')
         br

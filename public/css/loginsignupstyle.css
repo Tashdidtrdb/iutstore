@@ -126,3 +126,7 @@ body{
 #sub:focus{
   outline: none;
 }
+
+.message_error{
+  display: none;
+}

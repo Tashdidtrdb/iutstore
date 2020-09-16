@@ -24,14 +24,14 @@ exports.createProduct = (request, response) => {
       const error = new Error('Invalid session');
       error.statusCode = 400;
 
-      res.redirect('/login');
+      response.redirect('/login');
   } else {  
     const { email, id } = Session.parse(sessionString);
 
     AccountTable.getAccount({ email, emailHash: hash(email) })
     .then(({ account }) => {
       if(!account) {
-        res.redirect('/login');
+        resonse.redirect('/login');
       } 
       pool.query(
         "INSERT INTO PRODUCT (owner_id, p_title, p_category, size, color, p_description, price, pic_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)",
@@ -66,6 +66,7 @@ exports.getProductByCategory = (req, res) => {
 
     const products = Array.from(result.rows);
     res.status(200).render('products', {
+      category: category.toUpperCase() + (category === "others" ? '' : 'S'),
       products
     });
   });

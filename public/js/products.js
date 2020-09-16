@@ -1,6 +1,6 @@
 const addToCart = async (jsonValue) => {
   const { owner_id, p_id, p_title, price } = jsonValue;
-  console.log(jsonValue);
+  // console.log(jsonValue);
   try{
     const res = await axios({
       method: 'POST',
@@ -15,9 +15,14 @@ const addToCart = async (jsonValue) => {
         'Content-Type': 'application/json'
       }
     });
-    alert("Added to cart")
+
+    if(res.data === "login") {
+      alert("You're not logged in");
+    } else {
+      alert("Added to cart");
+    }
   } catch(err) {
-    console.log(err);
+    alert("An error has occured");
   }
 }
 

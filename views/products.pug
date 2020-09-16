@@ -1,7 +1,7 @@
 head
     link(rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
     link(rel='stylesheet' type='text/css' href='/css/productstyle.css')
-
+    title= category
 nav.navbar.navbar-default.navbar-fixed-top
     .container
         .navbar-header
@@ -35,6 +35,8 @@ nav.navbar.navbar-default.navbar-fixed-top
                 li
                     a(href='/cart') Cart
 
+br
+br
 .card_container
     each product in products    
         .card

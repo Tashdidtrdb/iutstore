@@ -84,7 +84,7 @@ body{
     min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
-    /* row-gap: 30px; */
+    row-gap: 30px;
     /* justify-content: center; */
     align-items: center;
     padding: 40px;
@@ -92,7 +92,7 @@ body{
 }
 
 .card{
-    padding-top: 30px;
+    /* padding-top: 30px; */
     display: flex;
     flex: 0 50%;
     justify-content: center;
