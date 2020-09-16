@@ -14,6 +14,7 @@ const addProduct = async (form_data) => {
     console.log(res);
     alert("Product has been added");
   } catch(err) {
+    alert("An error has occurred");
     console.log(err.message);
   }
 }

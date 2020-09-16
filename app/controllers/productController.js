@@ -35,7 +35,7 @@ exports.createProduct = (request, response) => {
       } 
       pool.query(
         "INSERT INTO PRODUCT (owner_id, p_title, p_category, size, color, p_description, price, pic_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)",
-        [account.id, p_title, p_category, size, color, p_description, price, request.file.filename],
+        [account.id, p_title, p_category.toLowerCase(), size, color, p_description, price, request.file.filename],
         (error, results) => {
           if (error) {
             throw error;

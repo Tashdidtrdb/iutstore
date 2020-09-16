@@ -23,17 +23,17 @@ nav.navbar.navbar-default.navbar-fixed-top
             span.caret
           ul.dropdown-menu
             li
-                a(href='/tshirts') T-Shirts
+                a(href='/product/?category=tshirt') T-Shirts
             li
-                a(href='/jackets') Jacket
+                a(href='/product/?category=jacket') Jackets
             li
-                a(href='hoodies') Hoodies
+                a(href='/product/?category=hoodie') Hoodies
             li
-                a(href='/others') Others
+                a(href='/product/?category=others') Others
         li
-          a(href='#') Account
+          a(href='/account') Account
         li
-          a(href='/') Cart
+          a(href='/cart') Cart
 .space
 .table-responsive.container
   table.table
@@ -46,10 +46,9 @@ nav.navbar.navbar-default.navbar-fixed-top
         th(scope='col') Seller
 
     tbody
-      - const idx = 1;
       each product in products
         tr
-          th(scope='row')= idx
+          th(scope='row') #
           td= product.product_id
           td= product.p_title
           td= product.price

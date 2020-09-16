@@ -22,14 +22,13 @@ nav.navbar.navbar-default.navbar-fixed-top
                         span.caret
                     ul.dropdown-menu
                         li
-                            - const v = "baal";
-                            a(href='/tshirts')= `${v}`
+                            a(href='/product/?category=tshirt') T-Shirts
                         li
-                            a(href='/jackets') Jacket
+                            a(href='/product/?category=jacket') Jackets
                         li
-                            a(href='/hoodies') Hoodies
+                            a(href='/product/?category=hoodie') Hoodies
                         li
-                            a(href='/others') Others
+                            a(href='/product/?category=others') Others
                 li
                     a(href='/account') Account
                 li
@@ -40,28 +39,28 @@ nav.navbar.navbar-default.navbar-fixed-top
         .imgBx
             img(src='/img/homepage_img/hoodie.PNG')
         .content
-          a(href='/hoodies')
+          a(href='/product/?category=hoodie')
             h3 HOODIES
 
     .card
         .imgBx
             img(src='/img/homepage_img/iutian_red.PNG')
         .content
-          a(href='/tshirts')
+          a(href='/product/?category=tshirt')
             h3 T-SHIRTS
 
     .card
         .imgBx
             img(src='/img/homepage_img/jacket_iutian_navyblue.png')
         .content
-          a(href='/jackets')
+          a(href='/product/?category=jacket')
             h3 JACKETS
 
     .card
         .imgBx
             img(src='/img/homepage_img/ss black.PNG')
         .content
-          a(href='/others')
+          a(href='/product/?category=others')
             h3 OTHERS
                 
 script(src='https://code.jquery.com/jquery-3.3.1.min.js')
