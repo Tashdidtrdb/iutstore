@@ -1,6 +1,7 @@
 head
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
     link(rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
-    link(rel='stylesheet' href='acountstyle.css')
+    link(rel='stylesheet' href='/css/accountstyle.css')
 nav.navbar.navbar-default.navbar-fixed-top
     .container
         .navbar-header
@@ -15,30 +16,38 @@ nav.navbar.navbar-default.navbar-fixed-top
         #navbar.collapse.navbar-collapse
             ul.nav.navbar-nav.navbar-right
                 li
-                    a(href='/') Home
+                    a(href='#') Home
                 li.dropdown
                     a.dropdown-toggle(data-toggle='dropdown' href='#')
                         | Categories
                         span.caret
                     ul.dropdown-menu
                         li
-                            a(href='/tshirts') T-Shirts
+                            a(href='/product/?category=tshirt') T-Shirts
                         li
-                            a(href='/jackets') Jacket
+                            a(href='/product/?category=jacket') Jacket
                         li
-                            a(href='/hoodies') Hoodies
+                            a(href='/product/?category=hoodie') Hoodies
                         li
-                            a(href='/others') Others
+                            a(href='/product/?category=others') Others
                 li
                     a(href='#') Account
                 li
                     a(href='/cart') Cart
-div
-    img.picture(src='/img/account_img/profile.jpg')
-.profileinfo
-    p Name: 
-    p Email: 
-    p Password: 
-    button Change Picture
+
+h2(style='text-align:center') User Profile Card
+.profilecard
+    img(src='/img/account_img/user.jpg' style='width:90%')
+    h1= account.name
+    p= `Phone: ${account.phone}`
+    p= `Email: ${email}`
+    p= `Address: ${account.address}`
+    p
+        button.addproduct(onclick="document.location='/add_product'") Add Product
+    p
+        button.myproducts(onclick="document.location='/cart/my_products'") My Products
+    p
+        button.logout(onclick="document.location='/account/logout'") Logout
+
 script(src='https://code.jquery.com/jquery-3.3.1.min.js')
 script(type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')

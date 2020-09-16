@@ -1,6 +1,7 @@
 head
     link(rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
-    link(rel='stylesheet' type='text/css' href='/css/homepagestyle.css')
+    link(rel='stylesheet' type='text/css' href='/css/productstyle.css')
+
 nav.navbar.navbar-default.navbar-fixed-top
     .container
         .navbar-header
@@ -22,8 +23,7 @@ nav.navbar.navbar-default.navbar-fixed-top
                         span.caret
                     ul.dropdown-menu
                         li
-                            - const v = "baal";
-                            a(href='/tshirts')= `${v}`
+                            a(href='/tshirts')= Tshirts
                         li
                             a(href='/jackets') Jacket
                         li
@@ -36,33 +36,29 @@ nav.navbar.navbar-default.navbar-fixed-top
                     a(href='/cart') Cart
 
 .card_container
-    .card
-        .imgBx
-            img(src='/img/homepage_img/hoodie.PNG')
-        .content
-          a(href='/hoodies')
-            h3 HOODIES
+    each product in products    
+        .card
+            .product_background
+                img(class='product_image', src=`/img/${product.pic_name}`)
+            .info
+                .product_name
+                    div
+                        h1.big= product.p_title                        
+                .description
+                    h3.title Product Info
+                    p.text= product.p_description
+                .color-container
+                    h3.title= `Color: ${product.color}`
+                .size-container
+                    h3.title= `Size: ${product.size}`
+                .buy-price
+                    button(value=`{"owner_id": ${product.owner_id}, "p_id": ${product.p_id}, "p_title": "${product.p_title}", "price": ${product.price}}` class='buy') Add to cart
+                        i(class='fas fa-shopping-cart')
+                    .price
+                        i(class='fas fa-dollar-sign')
+                        h1= `${product.price} tk`
 
-    .card
-        .imgBx
-            img(src='/img/homepage_img/iutian_red.PNG')
-        .content
-          a(href='/tshirts')
-            h3 T-SHIRTS
-
-    .card
-        .imgBx
-            img(src='/img/homepage_img/jacket_iutian_navyblue.png')
-        .content
-          a(href='/jackets')
-            h3 JACKETS
-
-    .card
-        .imgBx
-            img(src='/img/homepage_img/ss black.PNG')
-        .content
-          a(href='/others')
-            h3 OTHERS
-                
+script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js")
+script(src='/js/products.js')
 script(src='https://code.jquery.com/jquery-3.3.1.min.js')
 script(type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')

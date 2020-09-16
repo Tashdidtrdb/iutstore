@@ -1,8 +1,8 @@
 body{
-    background-size: 100% 700px;
+  background-size: 100% 700px;
 }
 .navbar{
-    border-bottom: orange solid .5rem;
+  border-bottom: orange solid .5rem;
 }
 
 .headleft{
@@ -46,9 +46,6 @@ body{
   display: block;
 }
 
-  /* .dropdown a:hover {background-color: #ddd;} */
-
-
 .simple{
   text-align: center;
   margin-top:40px;
@@ -59,7 +56,6 @@ body{
 .reg{
   width: 100%;
   padding: 50px 0px;
-  /* background-color: #d7f8f7; */
   opacity: 0.8;
 }
 #email{
@@ -79,52 +75,49 @@ body{
 }
 
 .input_field{
-    width: 250px;
-    padding: 10px;
-    border-radius: 10px;
-
+  width: 250px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 #ph{
-    width: 70px;
-    padding: 10px;
-    border-radius: 10px;
-    font-family: fantasy;
+  width: 70px;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: fantasy;
 }
 
 #sub{
-    width: 300px;
-    border-radius: 15px;
-    background-color: #eaa81b;
-    height:50px;
-    font-size: 19px;
-    border-color: #1a2c5b;
-    font-weight: bold;
-    box-shadow: 10px;
+  width: 300px;
+  border-radius: 15px;
+  background-color: #eaa81b;
+  height:50px;
+  font-size: 19px;
+  border-color: #1a2c5b;
+  font-weight: bold;
+  box-shadow: 10px;
 }
 
 .login{
-    width: 100%;
-    padding: 50px 0px;
-    opacity: 0.8;
+  width: 100%;
+  padding: 50px 0px;
+  opacity: 0.8;
 }
 
 .message{
-    font-size: 15px;
+  font-size: 15px;
 }
 .message2{
-    font-size: 15px;
-    text-decoration: none;
-    /* color: cornflowerblue; */
+  font-size: 15px;
+  text-decoration: none;
 }
 .d{
-    width:1350px;
-    height:80px;
-    font-family: monospace;
-    color: black;
-    font-weight: bolder;
-    font-size: 50px;
-
+  width:1350px;
+  height:80px;
+  font-family: monospace;
+  color: black;
+  font-weight: bolder;
+  font-size: 50px;
 }
 
 .input_field:focus{

@@ -42,8 +42,10 @@ nav.navbar.navbar-default.navbar-fixed-top
         th(scope='col') #
         th(scope='col') Product_ID
         th(scope='col') Product Name
+        th(scope='col') Customer Name
+        th(scope='col') Customer Address
+        th(scope='col') Customer Phone
         th(scope='col') Price
-        th(scope='col') Seller
 
     tbody
       - const idx = 1;
@@ -52,8 +54,10 @@ nav.navbar.navbar-default.navbar-fixed-top
           th(scope='row')= idx
           td= product.product_id
           td= product.p_title
-          td= product.price
           td= product.name
+          td= product.address
+          td= product.phone
+          td= product.price
 
 
 script(src='https://code.jquery.com/jquery-3.3.1.min.js')

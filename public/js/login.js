@@ -1,34 +1,20 @@
 const login = async (email, password) => {
-    try{
-        const res = await axios({
-            method: 'POST',
-            url: 'http://localhost:3000/account/login',
-            data: {
-              email,
-              password
-            }
-        });
-        console.log(res);
-        location.assign("/");
-    } catch(err) {
-        alert(JSON.stringify(err.response.data.message));
-        console.log(err.response.data);
-    }
-};
-
-const isLoggedIn = async () => {
-  try {
+  try{
     const res = await axios({
-      method: "GET",
-      url: "http://localhost:3000/account/authenticated"
+      method: 'POST',
+      url: 'http://localhost:3000/account/login',
+      data: {
+        email,
+        password
+      }
     });
-    location.assign("/account");
+    console.log(res);
+    location.assign("/");
   } catch(err) {
-    
+    alert(JSON.stringify(err.response.data.message));
+    console.log(err.response.data);
   }
-}
-
-isLoggedIn();
+};
 
 document.querySelector("#sub").addEventListener("click", e => {
   e.preventDefault();

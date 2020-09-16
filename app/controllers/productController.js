@@ -1,7 +1,13 @@
 const pool = require("./../../databasePool");
+const url = require("url");
+const multer = require("multer");
+const path = require("path");
+const Session = require("../account/session");
+const AccountTable = require('../account/table');
+const { hash } = require('../account/helper');
 
 exports.getProducts = (request, response) => {
-  // console.log(req.user);
+  // console.log(request.user);
   pool.query("SELECT * FROM PRODUCT", (error, results) => {
     if (error) {
       throw error;
@@ -11,18 +17,35 @@ exports.getProducts = (request, response) => {
 };
 
 exports.createProduct = (request, response) => {
-  const { p_title, size, p_description, price } = request.body;
+  const { p_title, p_category, size, color, p_description, price } = request.body;
 
-  pool.query(
-    "INSERT INTO PRODUCT (p_title, size, p_description, price) VALUES ($1, $2,$3,$4)",
-    [p_title, size, p_description, price],
-    (error, results) => {
-      if (error) {
-        throw error;
-      }
-      response.status(201).send(`product inserted`);
-    }
-  );
+  const { sessionString } = request.cookies;
+  if(!sessionString || !Session.isValid(sessionString)) {
+      const error = new Error('Invalid session');
+      error.statusCode = 400;
+
+      res.redirect('/login');
+  } else {  
+    const { email, id } = Session.parse(sessionString);
+
+    AccountTable.getAccount({ email, emailHash: hash(email) })
+    .then(({ account }) => {
+      if(!account) {
+        res.redirect('/login');
+      } 
+      pool.query(
+        "INSERT INTO PRODUCT (owner_id, p_title, p_category, size, color, p_description, price, pic_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)",
+        [account.id, p_title, p_category, size, color, p_description, price, request.file.filename],
+        (error, results) => {
+          if (error) {
+            throw error;
+          }
+          response.status(201).send(`product inserted`);
+        }
+      )
+    })
+    .catch(error => next(error));
+  }
 };
 
 exports.getProductById = (req, res) => {
@@ -35,13 +58,26 @@ exports.getProductById = (req, res) => {
   });
 };
 
+exports.getProductByCategory = (req, res) => {
+  const { category } = url.parse(req.url, true).query;
+
+  pool.query("SELECT * FROM PRODUCT WHERE p_category = $1", [category], (err, result) => {
+    if(err) throw err;
+
+    const products = Array.from(result.rows);
+    res.status(200).render('products', {
+      products
+    });
+  });
+};
+
 exports.updateProductById = (request, response) => {
   const id = parseInt(request.params.id);
-  const { p_title, size, p_description, price } = request.body;
+  const { p_title, p_category, size, p_description, price } = request.body;
 
   pool.query(
-    "UPDATE PRODUCT SET p_title=$1, size=$2, p_description=$3, price=$4 WHERE p_id = $5",
-    [p_title, size, p_description, price, id],
+    "UPDATE PRODUCT SET p_title=$1, p_category=$2, size=$3, p_description=$4, price=$5 WHERE p_id = $6",
+    [p_title, p_category, size, p_description, price, id],
     (error, results) => {
       if (error) {
         throw error;

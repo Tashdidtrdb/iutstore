@@ -10,8 +10,9 @@ router
   .get("/jackets", viewController.getJacket)
   .get("/tshirts", viewController.getTshirt)
   .get("/others", viewController.getOther)
-  .get("/account", authenticate, viewController.getAccount)
+  .get("/account", viewController.getAccount)
   .get("/signup", viewController.getSignup)
   .get("/login", viewController.getLogin)
+  .get("/add_product", viewController.add_product);
 
 module.exports = router;

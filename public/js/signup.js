@@ -1,4 +1,4 @@
-const signup = async (name, email, password) => {
+const signup = async (name, email, password, address, phone) => {
     try {
         const res = await axios({
             method: 'POST',
@@ -6,7 +6,9 @@ const signup = async (name, email, password) => {
             data: {
               name,
               email,
-              password
+              password,
+              address,
+              phone
             }
         });
         console.log(res);
@@ -18,24 +20,12 @@ const signup = async (name, email, password) => {
     }
 };
 
-const isLoggedIn = async () => {
-  try {
-    const res = await axios({
-      method: "GET",
-      url: "http://localhost:3000/account/authenticated"
-    });
-    location.assign("/account");
-  } catch(err) {
-    
-  }
-}
-
-isLoggedIn();
-
 document.querySelector("#sub").addEventListener("click", e => {
   e.preventDefault();
   const name = document.getElementsByName("name")[0].value;
   const email = document.getElementsByName("email")[0].value;
   const password = document.getElementsByName("pass")[0].value;
-  signup(name, email, password);
+  const address = document.getElementsByName("address")[0].value;
+  const phone = document.getElementsByName("phone")[0].value;
+  signup(name, email, password, address, phone);
 });

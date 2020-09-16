@@ -1,6 +1,7 @@
 head
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
     link(rel='stylesheet' type='text/css' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
-    link(rel='stylesheet' href='acountstyle.css')
+    link(rel='stylesheet' href='accountstyle.css')
 nav.navbar.navbar-default.navbar-fixed-top
     .container
         .navbar-header
@@ -33,12 +34,15 @@ nav.navbar.navbar-default.navbar-fixed-top
                     a(href='#') Account
                 li
                     a(href='#') Cart
-div
-    img.picture(src='profile.jpg')
-.profileinfo
-    p Name: 
-    p Email: 
-    p Password: 
-    button Change Picture
+h2(style='text-align:center') User Profile Card
+.profilecard
+    img(src='profile.jpg' style='width:90%')
+    h1 User Name
+    p Address:
+    p Password:
+    p
+        button.addproduct Add Product
+    p
+        button.logout Logout
 script(src='https://code.jquery.com/jquery-3.3.1.min.js')
 script(type='text/javascript' src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')

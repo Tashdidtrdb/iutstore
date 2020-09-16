@@ -5,7 +5,6 @@ body {
 }
 
 .navbar {
-  padding-left: 17px;
   border-bottom: orange solid .5rem;
 }
 
@@ -69,41 +68,26 @@ body {
     --primary: #2175f5;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body{
-    background-color: #efefef;
-}
-
-.card_container{
+.card-container{
     min-height: 100vh;
     display: flex;
-    flex-wrap: wrap;
-    /* row-gap: 30px; */
-    /* justify-content: center; */
+    justify-content: center;
     align-items: center;
     padding: 40px;
     overflow: hidden;
 }
 
 .card{
-    padding-top: 30px;
     display: flex;
-    flex: 0 50%;
     justify-content: center;
     align-items: center;
     width: 860px;
 }
 
-.product_background{
+.card-background{
     position: relative;
     width: 40%;
-    height: 450px;
+    height: 475px;
     box-shadow: -15px 0 35px rgba(0, 0, 0, 0.1),
     0 -15px 35px rgba(0, 0, 0, 0.1),
     0 15px 35px rgba(0, 0, 0, 0.1);
@@ -119,13 +103,9 @@ body{
     }
 }
 
-.product_image{
-    width: 100%;
-    height: 100%;
-    opacity: 1;
-    bottom: 0;
-    right: 0;
-    transition: .5s;
+.p_image{
+  height: 100%;
+  width: 100%;
 }
 
 .info{
@@ -138,56 +118,95 @@ body{
     0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
-.product_name{
+.p_title{
     padding: 0 0 10px 0;
 }
 
-.product_name div{
+.p_title div{
     display: flex;
     align-items: center;
 }
 
-.product_name div .big{
+.p_title div .big{
     margin-right: 10px;
-    font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: #333;
     line-height: 1;
 }
 
-.product_name, .description, .color-container, .size-container{
+.p_title div .new{
+    background-color: var(--primary);
+    text-transform: uppercase;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.p_title .small{
+    font-weight: 500;
+    color: #444;
+    margin-top: 3px;
+    text-transform: capitalize;
+}
+
+.p_title, .p_description, .color-container, .size-container{
     border-bottom: 1px solid #dadada;
 }
 
-.description{
-    /* padding: 10px 0; */
+.p_description{
+    padding: 10px 0;
 }
 
 .title{
     color: #3a3a3a;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
 }
 
 .text{
-    overflow-y: auto;
-    max-height: 180px;
     color: #555;
     font-size: 17px;
 }
 
 .color-container{
-    /* padding: 10px 0; */
+    padding: 10px 0;
 }
 
 .size-container{
-    /* padding: 10px 0; */
+    padding: 10px 0;
     margin-bottom: 10px;
 }
 
+.sizes{
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.size{
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: #eee;
+    margin: 0 10px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.size.active{
+    background-color: var(--primary);
+    color: #fff;
+    transition: .5s;
+}
+
 .buy-price{
-    /* padding-top: 15px; */
+    padding-top: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -211,8 +230,6 @@ body{
 }
 
 .buy{
-    border: 0px;
-    margin-top: 5px;
     padding: .7rem 1rem;
     background-color: var(--primary);
     text-decoration: none;
@@ -220,17 +237,12 @@ body{
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 500;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    transition: .5s;
 }
 
 .buy:hover{
-    text-decoration: none;
-    color: #fff;
-}
-
-.buy:focus{
-  text-decoration: none;
-  color: #fff;
+    transform: scale(1.1);
 }
 
 .buy i{
@@ -238,17 +250,13 @@ body{
 }
 
 @media (max-width: 1070px){
-    .product_image{
+    .shoe{
         width: 135%;
     }
 }
 
 @media (max-width: 1000px){
-    .card_container{
-      flex-direction: column;
-    }
     .card{
-        /* padding-top: 0px; */
         flex-direction: column;
         width: 100%;
         box-shadow: 0 0 35px 1px rgba(0, 0, 0, 0.2);
@@ -259,15 +267,21 @@ body{
         box-shadow: none;
     }
 
-    .product_image{
+    .shoe{
         width: 100%;
+        transform: rotate(-5deg) translateY(-50%);
         top: 55%;
         right: 2%;
+    }
+
+    .nike{
+        top: 20%;
+        left: 5%;
     }
 }
 
 @media (max-width: 490px){
-    .product_name div .big{
+    .p_title div .big{
         font-size: 1.3rem;
     }
 
@@ -306,7 +320,7 @@ body{
         display: none;
     }
 
-    .card_container{
+    .card-container{
         padding: 20px;
     }
 }
