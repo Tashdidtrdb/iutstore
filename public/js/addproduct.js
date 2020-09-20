@@ -49,8 +49,6 @@ document.querySelector("#sub").addEventListener("click", e => {
   // console.log(pic);
   if(!name || !category || !size || !color || !description || !price || !pic){
     show_error("All the fields need to be filled");
-  } else if(category !== "tshirt" || category !== "jacket" || category !== "hoodie" || category !== "other") {
-    show_error("Please provide a valid category...Category must be tshirt / jacket / hoodie / others");
   } else {
     addProduct(form_data);
   }
