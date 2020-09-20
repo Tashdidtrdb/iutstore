@@ -5,6 +5,7 @@ const path = require("path");
 const Session = require("../account/session");
 const AccountTable = require('../account/table');
 const { hash } = require('../account/helper');
+const cloudinary = require('./../../secrets/cloudinaryConfig');
 
 exports.getProducts = (request, response) => {
   // console.log(request.user);
@@ -16,7 +17,7 @@ exports.getProducts = (request, response) => {
   });
 };
 
-exports.createProduct = (request, response) => {
+exports.createProduct = (request, response, next) => {
   const { p_title, p_category, size, color, p_description, price } = request.body;
 
   const { sessionString } = request.cookies;
@@ -33,16 +34,25 @@ exports.createProduct = (request, response) => {
       if(!account) {
         resonse.redirect('/login');
       } 
-      pool.query(
-        "INSERT INTO PRODUCT (owner_id, p_title, p_category, size, color, p_description, price, pic_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)",
-        [account.id, p_title, p_category.toLowerCase(), size, color, p_description, price, request.file.filename],
-        (error, results) => {
-          if (error) {
-            throw error;
+
+      if(!request.file) throw new Error("No file was uploaded");
+
+      cloudinary.uploader.upload(request.file.path, {
+        public_id: request.file.filename
+      }, (error, result) => {
+        if(error) throw error;
+
+        pool.query(
+          "INSERT INTO PRODUCT (owner_id, p_title, p_category, size, color, p_description, price, url) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)",
+          [account.id, p_title, p_category.toLowerCase(), size, color, p_description, price, result.url],
+          (error, results) => {
+            if (error) {
+              throw error;
+            }
+            response.status(201).send(`product inserted`);
           }
-          response.status(201).send(`product inserted`);
-        }
-      )
+        )
+      })
     })
     .catch(error => next(error));
   }

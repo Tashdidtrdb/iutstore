@@ -1,7 +1,7 @@
 CREATE TABLE account(
     id SERIAL PRIMARY KEY,
-    name VARCHAR(64),
-    address VARCHAR(100),
+    name VARCHAR(100),
+    address VARCHAR(500),
     phone VARCHAR(30),
     "emailHash" VARCHAR(64),
     "passwordHash" VARCHAR(64),
@@ -11,13 +11,13 @@ CREATE TABLE account(
 CREATE TABLE product(
   p_id SERIAL PRIMARY KEY,
   owner_id INTEGER REFERENCES ACCOUNT(id),
-  p_title VARCHAR(40) NOT NULL,
-  p_category VARCHAR(40) NOT NULL,
-  size VARCHAR(10) NOT NULL,
-  color VARCHAR(10) NOT NULL,
-  p_description VARCHAR(100) NOT NULL,
+  p_title VARCHAR(100) NOT NULL,
+  p_category VARCHAR(100) NOT NULL,
+  size VARCHAR(100) NOT NULL,
+  color VARCHAR(100) NOT NULL,
+  p_description VARCHAR(500) NOT NULL,
   price INTEGER NOT NULL,
-  pic_name VARCHAR(100)
+  url VARCHAR(500)
 );
 
 CREATE TABLE CART(
@@ -25,7 +25,7 @@ CREATE TABLE CART(
   user_id INTEGER REFERENCES ACCOUNT(id),
   owner_id INTEGER REFERENCES ACCOUNT(id),
   product_id INTEGER REFERENCES PRODUCT(p_id),
-  p_title VARCHAR(40) NOT NULL,
+  p_title VARCHAR(100) NOT NULL,
   price INTEGER NOT NULL,
   PRIMARY KEY(cart_id,user_id,owner_id,product_id)
 );

@@ -33,6 +33,11 @@ const addProduct = async (form_data) => {
 
 document.querySelector("#sub").addEventListener("click", e => {
   e.preventDefault();
+  
+  const display = document.getElementsByClassName("message_display")[0];
+  display.classList = "message_display alert alert-success";
+  display.style.display = "none";
+
   const form_data = new FormData(document.querySelector(".productform"));
   const name = document.getElementsByName("p_title")[0].value;
   const category = document.getElementsByName("p_category")[0].value;
@@ -41,9 +46,11 @@ document.querySelector("#sub").addEventListener("click", e => {
   const description = document.getElementsByName("p_description")[0].value;
   const price = document.getElementsByName("price")[0].value;
   const pic = document.getElementsByName("pic")[0].value;
-  console.log(pic);
+  // console.log(pic);
   if(!name || !category || !size || !color || !description || !price || !pic){
     show_error("All the fields need to be filled");
+  } else if(category !== "tshirt" || category !== "jacket" || category !== "hoodie" || category !== "other") {
+    show_error("Please provide a valid category...Category must be tshirt / jacket / hoodie / others");
   } else {
     addProduct(form_data);
   }

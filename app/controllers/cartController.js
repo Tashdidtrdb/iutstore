@@ -3,7 +3,7 @@ const Session = require("../account/session");
 const AccountTable = require('../account/table');
 const { hash } = require('../account/helper');
 
-exports.add_to_cart = async (req, res) => {
+exports.add_to_cart = async (req, res, next) => {
   const { owner_id, p_id, p_title, price } = req.body;
 
   const { sessionString } = req.cookies;
@@ -75,7 +75,7 @@ exports.get_my_orders = async(req, res) => {
         if(error) throw error;
 
         const products = Array.from(result.rows);
-        console.log(products);
+        // console.log(products);
         res.status(200).render('cart', {
           products
         });
@@ -108,7 +108,7 @@ exports.get_my_products = async (req, res) => {
         if(error) throw error;
 
         const products = Array.from(result.rows);
-        console.log(products);
+        // console.log(products);
 
         res.status(200).render('my_products', {
           products

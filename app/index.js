@@ -6,6 +6,7 @@ const productRouter = require("./api/productRoute");
 const cartRouter = require("./api/cartRoute");
 const viewRouter = require("./api/viewRoute");
 const cookieParser = require("cookie-parser");
+
 const app = express();
 
 app.set("view engine", "pug");
@@ -26,7 +27,7 @@ app.use("/cart", cartRouter);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
-
+  console.log(err.message);
   res.status(statusCode).json({
     type: "error",
     message: err.message
